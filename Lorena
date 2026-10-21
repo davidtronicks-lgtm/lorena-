@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#101010">
+<title>Para Lorita 💗</title>
+<style>
+:root{--bg:#101010;--panel:#181818;--green:#1ed760;--muted:#b3b3b3;--white:#fff}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;background:radial-gradient(circle at 50% 0%,#263d30 0,#101010 42%);color:var(--white);font-family:Arial,Helvetica,sans-serif;display:flex;align-items:center;justify-content:center;padding:18px}
+.card{width:min(100%,430px);background:linear-gradient(160deg,#222 0%,#141414 80%);border:1px solid #333;border-radius:24px;padding:26px 22px 22px;box-shadow:0 18px 60px #0008;overflow:hidden;position:relative}
+.top{display:flex;align-items:center;gap:9px;font-weight:700;letter-spacing:.2px;font-size:14px;color:#eee}
+.logo{width:25px;height:25px;border-radius:50%;background:var(--green);color:#101010;display:grid;place-items:center;font-size:15px}
+.cover{margin:25px auto 20px;width:190px;height:190px;border-radius:18px;background:linear-gradient(135deg,#d4f4df,#1ed760 50%,#174b31);display:flex;align-items:center;justify-content:center;box-shadow:0 8px 32px #1ed76025;position:relative;overflow:hidden}
+.cover:before,.cover:after{content:"";position:absolute;border:1px solid #ffffff40;border-radius:50%;width:230px;height:230px}
+.cover:after{width:160px;height:160px}
+.heart{font-size:72px;z-index:1;filter:drop-shadow(0 5px 9px #0004);animation:pulse 1.8s infinite}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.08)}}
+h1{font-size:29px;line-height:1.12;margin:8px 0 9px;letter-spacing:-.8px}
+.sub{color:var(--muted);font-size:14px;line-height:1.5}
+.track{margin:22px 0 9px;display:flex;align-items:center;justify-content:space-between;font-size:13px;color:#ddd}
+.track strong{font-size:14px;color:#fff}
+.bar{height:4px;background:#4b4b4b;border-radius:5px;overflow:hidden}
+.bar span{display:block;width:0;height:100%;background:var(--green);animation:progress 14s linear forwards}
+@keyframes progress{to{width:100%}}
+.times{display:flex;justify-content:space-between;color:#aaa;font-size:10px;margin-top:6px}
+.question{font-size:20px;font-weight:800;line-height:1.25;margin:23px 0 16px}
+.buttons{display:grid;gap:10px}
+button{border:0;border-radius:999px;padding:15px 18px;font-size:15px;font-weight:800;cursor:pointer;transition:transform .15s,filter .15s}
+button:active{transform:scale(.98)}
+.yes{background:var(--green);color:#07140b}
+.no{background:#2a2a2a;color:#fff;border:1px solid #555}
+.note{font-size:11px;color:#8f8f8f;text-align:center;margin:17px 0 0}
+.screen{animation:fade .45s ease}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.hidden{display:none}
+.final-emoji{font-size:52px;text-align:center;margin:22px 0 10px}
+.final-text{text-align:center;line-height:1.55;color:#eee;font-size:15px;margin:12px 0 22px}
+.confetti{position:fixed;top:-20px;font-size:20px;animation:fall 3.6s linear forwards;pointer-events:none}
+@keyframes fall{to{transform:translateY(110vh) rotate(540deg);opacity:.15}}
+footer{font-size:10px;color:#777;text-align:center;margin-top:19px}
+</style>
+</head>
+<body>
+<main class="card">
+  <div class="top"><span class="logo">♫</span><span>Una cosita para ti</span><span style="margin-left:auto;color:#1ed760">● PLAYLIST</span></div>
+  <section id="start" class="screen">
+    <div class="cover"><div class="heart">💗</div></div>
+    <div class="sub">UNA CANCIÓN… O ALGO MÁS</div>
+    <h1>Para mi Lorita 🩷</h1>
+    <div class="sub">Hice esta pequeña página porque hay algo que quiero preguntarte, y quería hacerlo de una forma especial.</div>
+    <div class="track"><strong>El 6 de mi 7, mi llantera 🎧</strong><span>♡</span></div>
+    <div class="bar"><span></span></div><div class="times"><span>0:00</span><span>mi canción favorita eres tú</span></div>
+    <button class="yes" style="width:100%;margin-top:24px" onclick="openQuestion()">Dale play 💚</button>
+    <div class="note">Hecho con cariño, solo para ti.</div>
+  </section>
+  <section id="ask" class="screen hidden">
+    <div class="cover" style="width:150px;height:150px;margin-top:20px"><div class="heart">🫶</div></div>
+    <div class="sub">LA PREGUNTA MÁS IMPORTANTE</div>
+    <div class="question">Lorita, ¿quieres ser mi novia? 💗</div>
+    <div class="sub" style="margin-bottom:18px">Escoge lo que sientas de verdad. No hay presión; quiero que estés cómoda con tu respuesta. 🩷</div>
+    <div class="buttons">
+      <button class="no" onclick="answer('no')">Calla paisano 😭</button>
+      <button class="yes" onclick="answer('yes')">SIIII 💗✨</button>
+    </div>
+    <div class="note">Tu respuesta importa, sea cual sea.</div>
+  </section>
+  <section id="yes" class="screen hidden">
+    <div class="final-emoji">😭💗🫶</div><h1 style="text-align:center">¿EN SERIOOO?</h1>
+    <div class="final-text">AY, LORITAAAA. 💗 AYY LLORENAA DE VERDAD TE QUIERO 😭💗. Y estate segura de que puedes confiar en mí y nunca dudar de ti, isisisi 🥹🫶 Quiero hacerte sonreír y que lo nuestro se construya bonito, con cariño y respeto.</div>
+    <button class="yes" style="width:100%" onclick="shareResponse('SIIII 💗✨')">Mandarme tu respuesta 💌</button>
+    <div class="note">Puedes hacer captura de esta pantalla también 🥹</div>
+  </section>
+  <section id="no" class="screen hidden">
+    <div class="final-emoji">😭🤝💗</div><h1 style="text-align:center">JAJAJA, bueno pues 😭</h1>
+    <div class="final-text">Está bien, Lorita. Gracias por responderme con sinceridad. No quiero que te sientas presionada; te tengo cariño y respeto lo que sientas. 🩷</div>
+    <button class="no" style="width:100%" onclick="shareResponse('Calla paisano 😭')">Mandarme tu respuesta 💌</button>
+    <div class="note">Todo bien, paisana. 💗</div>
+  </section>
+  <footer>♡ una página hecha con cariño ♡</footer>
+</main>
+<script>
+function show(id){['start','ask','yes','no'].forEach(x=>document.getElementById(x).classList.toggle('hidden',x!==id))}
+function openQuestion(){show('ask')}
+function answer(which){show(which);if(which==='yes')confetti()}
+function confetti(){const bits=['💗','💚','✨','💕','♫'];for(let i=0;i<28;i++){let e=document.createElement('span');e.className='confetti';e.textContent=bits[Math.floor(Math.random()*bits.length)];e.style.left=Math.random()*100+'vw';e.style.animationDelay=Math.random()*.8+'s';e.style.fontSize=(14+Math.random()*14)+'px';document.body.appendChild(e);setTimeout(()=>e.remove(),4500)}}
+function shareResponse(answer){let msg='Lorita respondió: '+answer+' 💗';if(navigator.share){navigator.share({title:'Mi respuesta',text:msg}).catch(()=>copyMsg(msg))}else copyMsg(msg)}
+function copyMsg(msg){if(navigator.clipboard){navigator.clipboard.writeText(msg).then(()=>alert('Respuesta copiada. Envíamela por el chat 💌')).catch(()=>prompt('Copia tu respuesta y envíamela:',msg))}else prompt('Copia tu respuesta y envíamela:',msg)}
+</script>
+</body>
+</html>
